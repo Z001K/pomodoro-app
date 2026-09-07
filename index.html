@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro</title>
+  <link href='style.css' rel='stylesheet'/>
+</head>
+
+<body>
+  <div class="background-grid"></div>
+
+  <details class="theme-dropdown">
+    <summary class="theme-toggle-btn">Themes</summary>
+    <div class="theme-options" id="themeOptions"></div>
+  </details>
+
+  <div class="container">
+    <div class="timer-wrapper">
+      <svg class="progress-ring">
+        <circle class="progress-ring-circle"></circle>
+        <circle class="progress-ring-progress work" id="progress"></circle>
+      </svg>
+      <div class="timer-display">
+        <div class="time" id="timeDisplay">00:00</div>
+        <div class="session-type" id="sessionType">Work Session</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn primary" id="startBtn">Start</button>
+      <button class="btn" id="pauseBtn">Pause</button>
+      <button class="btn" id="resetBtn">Reset</button>
+      <button class="btn" id="skipBtn">Skip</button>
+    </div>
+
+    <div class="settings">
+      <div class="setting-group">
+        <div class="setting-label">Work</div>
+        <div class="setting-controls">
+          <button class="setting-btn" id="workMinus">-</button>
+          <input type="number" class="setting-input" id="workTime" min="1" max="60" value="25">
+          <button class="setting-btn" id="workPlus">+</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <div class="setting-label">Break</div>
+        <div class="setting-controls">
+          <button class="setting-btn" id="breakMinus">-</button>
+          <input type="number" class="setting-input" id="breakTime" min="1" max="30" value="5">
+          <button class="setting-btn" id="breakPlus">+</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <div class="setting-label">Long Break</div>
+        <div class="setting-controls">
+          <button class="setting-btn" id="longBreakMinus">-</button>
+          <input type="number" class="setting-input" id="longBreakTime" min="5" max="60" value="15">
+          <button class="setting-btn" id="longBreakPlus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="completedSessions">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-value" id="totalTime">0h 0m</div>
+        <div class="stat-label">Total Time</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-value" id="currentStreak">0</div>
+        <div class="stat-label">Streak</div>
+      </div>
+    </div>  
+  </div>
+
+  <div class="notification" id="notification">
+    <div id="notifText">Session Completed</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
