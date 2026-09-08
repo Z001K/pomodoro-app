@@ -93,7 +93,7 @@ function updateDisplay() {
     if (isRunning) {
         document.title = `${timeString} ${label}`;
     } else {
-        document.title = `⏯ (${timeString}) Paused`;
+        document.title = ` ${timeString} Paused`;
     }
 }
 
