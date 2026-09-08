@@ -40,12 +40,12 @@ const themes = [
   { name: 'Soda', bg: '#CC89A6', text: '#4D3D79', primary: '#281E3C', accent: '#DAB0C0' },
   { name: 'Candy', bg: '#840B2A', text: '#F696B3', primary: '#DD1440', accent: '#5A4864' },
   { name: 'Toned Love', bg: '#C5979D', text: '#484D6D', primary: '#488F8C', accent: '#2C365E' },
-  { name: 'Choco', bg: '#443025', text: '#EC9C9D', primary: '#AAF66', accent: '#F2CF2A' },
+  { name: 'Choco', bg: '#443025', text: '#EC9C9D', primary: '#AA7F66', accent: '#F2CF2A' },
   { name: 'Sugary', bg: '#fec3df', text: '#9fa3e3', primary: '#a0f3ed', accent: '#ffeea8' },
   { name: 'Love', bg: '#CE4A4A', text: '#E8FFBE', primary: '#FF819C', accent: '#FFB8E3' },
   { name: 'Blue Lime', bg: '#2D90A7', text: '#3FBFC0', primary: '#53F2B8', accent: '#D0FEFF' },
   { name: 'Arcade', bg: '#BC4AC6', text: '#ADF1C6', primary: '#C1B3F1', accent: '#6BBBF6' },
-  { name: 'Candy Store', bg: '#4EO7O5', text: '#FF65A0', primary: '#B6228B', accent: '#F51772' },
+  { name: 'Candy Store', bg: '#F2CED8', text: '#FF65A0', primary: '#B6228B', accent: '#F51772' },
   { name: 'Floral', bg: '#C0B9DD', text: '#80A1D4', primary: '#DED9E2', accent: '#75C9C8' },
   { name: 'Cooled', bg: '#9C7A97', text: '#303633', primary: '#8BE8CB', accent: '#888DA7' }
 ];
