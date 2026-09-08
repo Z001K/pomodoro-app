@@ -10,6 +10,7 @@ let completedSessions = 0;
 let totalMinutes = 0;
 let currentStreak = 0;
 let timer = null;
+let autoStartBreak = false;
 
 const timeDisplay = document.getElementById('timeDisplay');
 const sessionType = document.getElementById('sessionType');
@@ -20,6 +21,8 @@ const resetBtn = document.getElementById('resetBtn');
 const skipBtn = document.getElementById('skipBtn');
 const notification = document.getElementById('notification');
 const notificationText = document.getElementById('notifText');
+
+const autoStartBreakDisplay = document.getElementById('autoStartBreak');
 
 const workTimeDisplay = document.getElementById('workTime');
 const breakTimeDisplay = document.getElementById('breakTime');
@@ -255,6 +258,10 @@ function sessionComplete() {
   updateProgress();
   updateStats();
   playNotificationSound();
+
+  if (autoStartBreak) { 
+    startTimer(); 
+  }
 }
 
 function adjustTime(type, delta) {
@@ -295,6 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
   pauseBtn.addEventListener('click', pauseTimer);
   resetBtn.addEventListener('click', resetTimer);
   skipBtn.addEventListener('click', skipSession);
+
+  autoStartBreakDisplay.addEventListener('change', (e) => {
+        autoStartBreak = e.target.checked;
+  });
 
   document.getElementById('workPlus').addEventListener('click', () => adjustTime('work', 1));
   document.getElementById('workMinus').addEventListener('click', () => adjustTime('work', -1));
