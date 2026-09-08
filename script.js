@@ -79,10 +79,23 @@ progress.style.strokeDasharray = `${circumference} ${circumference}`;
 progress.style.strokeDashoffset = circumference;
 
 function updateDisplay() {
-  const minutes = Math.floor(currentTime / 60);
-  const seconds = currentTime % 60;
-  timeDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-}
+        const minutes = Math.floor(currentTime / 60);
+        const seconds = currentTime % 60;
+        const timeString = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        
+        // 1. Update the main page text layout
+        timeDisplay.textContent = timeString;
+
+        // 2. Dynamic state label (Work, Short Break, or Long Break)
+        const label = sessionType ? sessionType.textContent : 'Pomodoro';
+
+        // 3. Update the browser tab bar text
+        if (isRunning) {
+            document.title = `${timeString} ${label}`;
+        } else {
+            document.title = `❚❚ (${timeString}) Paused`;
+        }
+    }
 
 function updateProgress() {
   const progressValue = totalTime > 0 ? 1 - (currentTime / totalTime) : 0;
@@ -173,6 +186,7 @@ function startTimer() {
       currentTime--;
       updateDisplay();
       updateProgress();
+      updateDisplay();
       if (currentTime <= 0) {
         sessionComplete();
       }
@@ -188,6 +202,7 @@ function pauseTimer() {
   isRunning = false;
   startBtn.textContent = 'Start';
   startBtn.classList.remove('pulsing');
+  updateDisplay();
 }
 
 function resetTimer() {
